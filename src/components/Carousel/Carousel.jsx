@@ -1,14 +1,14 @@
-//imports
+import React from "react";
 import { Link } from "react-router-dom";
-import Carousel from "better-react-carousel";
+import Carousel from "react-bootstrap/Carousel";
 import "./carousel.css";
 
 const CarouselComp = () => {
   return (
-    <Carousel className="carousel" rows={1} autoplay={5000} loop={true}>
+    <Carousel className="carousel" interval={5000} wrap={true}>
       <Carousel.Item className="carouselItem">
         <img className="carouselImg" src="../../img/carousel1.jpg" alt="carousel3" />
-        <div className="carouselDiv">
+        <Carousel.Caption className="carouselDiv">
           <div className="carouselBox">
             <h3 className="carouselH3">
               Garantizando la seguridad
@@ -18,11 +18,11 @@ const CarouselComp = () => {
               Ver más
             </Link>
           </div>
-        </div>
+        </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="carouselItem">
         <img className="carouselImg" src="../../img/carousel2.jpg" alt="carousel2" />
-        <div className="carouselDiv">
+        <Carousel.Caption className="carouselDiv">
           <div className="carouselBox">
             <h3 className="carouselH3">
               Fortaleciendo tus <br />
@@ -32,11 +32,11 @@ const CarouselComp = () => {
               Ver más
             </Link>
           </div>
-        </div>
+        </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="carouselItem">
         <img className="carouselImg" src="../../img/carousel3.jpeg" alt="carousel3" />
-        <div className="carouselDiv">
+        <Carousel.Caption className="carouselDiv">
           <div className="carouselBox">
             <h3 className="carouselH3">
               Profesionales en protección <br /> contra ataques informáticos
@@ -45,7 +45,7 @@ const CarouselComp = () => {
               Ver más
             </Link>
           </div>
-        </div>
+        </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
   );
