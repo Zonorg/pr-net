@@ -47,7 +47,6 @@ const CarouselComp = () => {
           </div>
         </div>
       </Carousel.Item>
-      {/* ... */}
     </Carousel>
   );
 };
