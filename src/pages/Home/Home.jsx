@@ -1,13 +1,13 @@
 // Imports
 import "./home.css";
 import { Link } from "react-router-dom";
-import CarouselComp from "../../components/Carousel/Carousel";
+// import CarouselComp from "../../components/Carousel/Carousel";
 
 const Home = () => {
   return (
     <div className="homeDiv">
       <main className="homeMain">
-        <CarouselComp />
+        {/* <CarouselComp /> */}
         <div className="services">
           <h4>Servicios de seguridad cibernética</h4>
           <div className="serviceDiv">
