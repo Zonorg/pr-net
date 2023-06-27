@@ -1,0 +1,79 @@
+.footer {
+  background-color: #63adf2;
+  padding: 30px;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.redIcons {
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px #444444;
+  padding-bottom: 10px;
+}
+
+.linkIcons {
+  justify-self: center;
+  width: 10%;
+}
+
+.fab {
+  display: flex;
+  justify-content: center;
+  color: #222222;
+  font-size: 35px;
+}
+
+.fab:hover {
+  cursor: pointer;
+  transform: translateY(-10%);
+  transition: ease 0.3s;
+}
+
+.mailDiv {
+  display: flex;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.email {
+  color: #333333;
+  font-size: 18px;
+}
+
+p {
+  padding-top: 5px;
+  color: #333333;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+
+  .contactContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redIcons {
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+  }
+
+  .fab {
+    margin-left: 20px;
+    font-size: 28px;
+    
+  }
+
+  .email {
+    font-size: 16px;
+  }
+
+  .footer p {
+    font-size: 13px;
+  }
+}

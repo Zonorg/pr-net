@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Gilroy-Medium"; /* Asigna un nombre a tu fuente */
+  src: url("./fonts/gilroy/Gilroy-Medium.ttf") format("truetype"); /* Ruta relativa al archivo de fuente */
+}
+
+* {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Play', 'Noto Serif Display', sans-serif; */
+  font-family: "Gilroy-Medium", sans-serif;
+}
+
+.app {
+  background-color: #f6f7eb;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex-grow: 1;
+}
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.scale-105:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: ease 0.3s;
+}

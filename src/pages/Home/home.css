@@ -1,0 +1,150 @@
+/* MAIN */
+.homeMain {
+  width: 100%;
+}
+
+.services {
+  background-color: #f6f7eb;
+  padding: 50px 0;
+}
+
+.services h4 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.serviceDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  border-radius: 4px;
+}
+
+.serviceImg {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  width: 40%;
+  border-radius: 4px;
+}
+
+.serviceUl {
+  width: 40%;
+}
+
+.serviceLi {
+  list-style-type: none;
+  font-size: 24px;
+  color: #faa916;
+}
+
+.serviceLi div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.fa-laptop {
+  width: 10%;
+  font-size: 30px;
+  color: #ff0035;
+}
+
+.serviceText {
+  font-size: 16px;
+  text-align: start;
+}
+
+.linkDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.serviceLink {
+  font-size: 20px;
+  width: 120px;
+  text-align: center;
+  margin: 30px;
+  color: #f6f7eb;
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  background-color: #ff0035;
+}
+
+.serviceLink:hover {
+  color: #212227;
+}
+
+.serviceLink:focus {
+  background-color: #faa916;
+}
+
+.cardsDiv {
+  background-color: #f6f7eb;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.thirdDiv {
+  margin-bottom: 50px;
+}
+
+.thirdDiv h4 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.card {
+  width: 25%;
+  height: 310px;
+  margin: 15px;
+  background-color: #f6f7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+}
+
+.cardImg {
+  background-color: #faa916;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.cardTitle {
+  padding: 15px 0;
+  text-align: center;
+}
+
+/* FIN MAIN */
+
+@media screen and (max-width: 480px) {
+  .serviceImg {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .serviceDiv {
+    flex-direction: column;
+  }
+
+  .serviceUl {
+    width: 95%;
+  }
+
+  .serviceTitle h3 {
+    margin: 0 20px;
+  }
+
+  .cardsDiv {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 300px;
+  }
+}

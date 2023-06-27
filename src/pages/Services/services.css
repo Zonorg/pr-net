@@ -1,0 +1,92 @@
+h2 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cardContainer {
+  margin: 40px 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cardService {
+  padding: 20px;
+  height: 400px;
+  width: 340px;
+  text-align: center;
+  margin: 20px;
+  background-color: #f6f7eb;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  transition: 0.3s ease-in-out;
+}
+
+.cardService:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.cardService img {
+  height: 180px;
+  width: 280px;
+  object-fit: fill;
+}
+.cardH3 {
+  padding-top: 15px;
+  color: #444444;
+  font-size: 18px;
+  height: 60px;
+}
+
+.cardPrice {
+  color: #faa916;
+  font-size: 18px;
+}
+
+.cardButton {
+  color: #f6f7eb;
+  text-align: center;
+  width: 30%;
+  background-color: #ff0035;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+.cardButton:hover {
+  color: #212227;
+  background-color: #faa916;
+}
+
+@media screen and (max-width: 480px) {
+  .cardContainer {
+    flex-direction: column;
+  }
+
+  .cardService {
+    height: 280px;
+    width: 250px;
+  }
+
+  .cardService img {
+    width: 180px;
+    height: auto;
+  }
+
+  .cardH3 {
+    font-size: 14px;
+    height: auto;
+  }
+
+  .cardPrice {
+    font-size: 14px;
+  }
+
+  .cardButton {
+    font-size: 14px;
+    padding: 4px;
+  }
+}

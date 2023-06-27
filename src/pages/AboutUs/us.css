@@ -1,0 +1,89 @@
+.infoDiv {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.iconContainer {
+  margin: 20px 0;
+  width: 80%;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: start;
+  border-bottom: 2px solid #ff0035;
+}
+
+.fa-plus {
+  width: 5%;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ff0035;
+  margin-bottom: 15px;
+}
+
+.fa-plus h3 {
+  color: #212227;
+}
+
+.fa-minus {
+  cursor: pointer;
+  font-size: 30px;
+  width: 5%;
+}
+
+.info {
+  margin-top: 10px;
+  background-color: #faa916;
+  padding: 20px;
+  animation: growDown 300ms ease-in-out;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  transform-origin: top center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info p {
+  font-size: 15px;
+}
+
+.logoUs {
+  padding: 15px;
+  border: 3px solid #63adf2;
+  border-radius: 50%;
+  width: 20%;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1.1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fa-plus {
+    font-size: 20px;
+  }
+  .fa-minus {
+    font-size: 20px;
+  }
+
+  .infoDiv h3 {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}
