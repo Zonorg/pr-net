@@ -1,22 +1,13 @@
 import "./services.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import dbServices from "../../../dbServices";
 
 const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const getServices = async () => {
-      try {
-        const response = await axios.get("http://localhost:3001/services");
-        setServices(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getServices();
+    setServices(dbServices);
   }, []);
 
   return (

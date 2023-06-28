@@ -1,72 +1,66 @@
-import { useState } from "react";
-import axios from "axios";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Modal, Button } from "react-bootstrap";
 import "./contact.css";
 
 const Contact = () => {
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [email, setEmail] = useState("");
+  const form = useRef();
+  const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:3001/contact", {
-        subject,
-        email,
-        message,
-      });
-      setSubject("");
-      setEmail("");
-      setMessage("");
-    } catch (error) {
-      console.error("Error sending message:", error);
-    }
-  };
-
-  const handleSubjectChange = (e) => {
-    setSubject(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
+    emailjs.sendForm("pr-net", "template_fhxb9v6", form.current, "0Tau1YkFkZjIpRknq").then(
+      (result) => {
+        console.log(result.text);
+        handleShowModal();
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
     <div className="contactDiv">
-      <form className="contactForm" onSubmit={handleSubmit}>
-        <h2>Envíanos tu consulta</h2>
+      <form ref={form} onSubmit={sendEmail} className="contactForm">
+        <h2>Contrata nuestros servicios o envíanos tu consulta</h2>
         <label htmlFor="subject">Nombre:</label>
-        <input
-          type="text"
-          name="subject"
-          id="subject"
-          value={subject}
-          onChange={handleSubjectChange}
-          required
-        />
-        <label htmlFor="email">Correo:</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          value={email}
-          onChange={handleEmailChange}
-          required
-        />
-        <label htmlFor="message">Mensaje:</label>
-        <textarea
-          name="message"
-          id="message"
-          value={message}
-          onChange={handleMessageChange}
-          required
-        />
-        <button type="submit">Enviar</button>
+        <input type="text" id="name" name="user_name" required />
+        <label>Empresa:</label>
+        <input type="text" name="user_company" id="company" required />
+        <label>Correo:</label>
+        <input type="email" name="user_email" id="email" required />
+        <label>Teléfono:</label>
+        <input type="tel" name="user_phone" id="phone" required />
+        <label>Mensaje:</label>
+        <textarea name="message" id="message" required />
+        <button type="submit" value="Send">
+          Enviar
+        </button>
       </form>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>¡Mensaje enviado!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Su mensaje ha sido enviado correctamente.</p>
+          <p>En breves nos comunicaremos con usted para resolver sus dudas.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./serv.css";
 import Error404 from "../../components/Error404/Error404";
+import servicesData from "../../../dbServices.json";
 
 const DetailService = () => {
   const [service, setService] = useState(null);
@@ -11,22 +11,17 @@ const DetailService = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getServiceById = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3001/services/${id}`);
-        setService(response.data);
-      } catch (error) {
-        console.log(error);
+    const getServiceById = () => {
+      const service = servicesData.find((service) => service.id === parseInt(id));
+      if (service) {
+        setService(service);
+      } else {
+        console.log("Service not found");
       }
     };
 
-    const getTotalServices = async () => {
-      try {
-        const response = await axios.get("http://localhost:3001/services");
-        setTotalServices(response.data.length); //Para ver la cantidad total de la api de servicios
-      } catch (error) {
-        console.log(error);
-      }
+    const getTotalServices = () => {
+      setTotalServices(servicesData.length);
     };
 
     getServiceById();
@@ -62,8 +57,7 @@ const DetailService = () => {
       <img src={service.image} alt={service.name} />
       <p>{service.description}</p>
       <p>$ {service.price.toLocaleString()}</p>
-      <button className="btn btn-primary custom-btn">Comprar ahora</button>
-      <Link className="btn custom-btn" to="/services">
+      <Link className="btn btn-primary custom-btn" to="/services">
         Ir atrás
       </Link>
       <button className="back-btn btn custom-btn" onClick={handlePreviousService}>

@@ -6,6 +6,10 @@
   
 }
 
+.contactDiv h2{
+  padding: 0 20px;
+}
+
 .contactForm {
   display: flex;
   flex-direction: column;

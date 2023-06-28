@@ -32,7 +32,7 @@ h2 {
 .cardService img {
   height: 180px;
   width: 280px;
-  object-fit: fill;
+  object-fit: contain;
 }
 .cardH3 {
   padding-top: 15px;
