@@ -3,10 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-.contactDiv h2{
+.contactDiv h2 {
   padding: 0 20px;
 }
 
@@ -56,6 +55,10 @@ textarea {
 }
 
 @media screen and (max-width: 480px) {
+  .contactDiv {
+    margin: 0;
+  }
+  
   .contactForm {
     width: 100%;
     border-radius: 0;
