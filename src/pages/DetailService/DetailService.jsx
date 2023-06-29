@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import "./serv.css";
 import Error404 from "../../components/Error404/Error404";
 import servicesData from "../../../dbServices.json";
@@ -10,6 +11,8 @@ const DetailService = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const getServiceById = () => {
       const service = servicesData.find((service) => service.id === parseInt(id));
@@ -18,12 +21,14 @@ const DetailService = () => {
       } else {
         console.log("Service not found");
       }
+      setIsLoading(false);
     };
 
     const getTotalServices = () => {
       setTotalServices(servicesData.length);
     };
 
+    setIsLoading(true);
     getServiceById();
     getTotalServices();
   }, [id]);
@@ -47,10 +52,18 @@ const DetailService = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="loading-spinner">
+        <ClipLoader color="#123abc" loading={isLoading} size={50} />
+      </div>
+    );
+  }
+
   if (!service) {
     return <Error404 />;
   }
-
+  
   return (
     <div className="servInfo">
       <h2>{service.name}</h2>

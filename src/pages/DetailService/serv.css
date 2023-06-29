@@ -1,3 +1,10 @@
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
 .servInfo {
   margin: 10px 0;
   display: flex;

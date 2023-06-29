@@ -57,7 +57,6 @@ const Home = () => {
 
         <div className="thirdDiv">
           <h4>Aspectos Diferenciales</h4>
-
           <div className="cardsDiv">
             <div className="card scale-105">
               <img className="cardImg" src="/img/analytics.svg" alt="" />
