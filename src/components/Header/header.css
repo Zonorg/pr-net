@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 5px 10px;
 }
 
 .logoDiv {
@@ -24,7 +24,8 @@
 
 .homeH1 {
   font-size: 30px;
-  padding: 5px;
+  padding: 0;
+  margin: 0;
 }
 
 .cart-button {
@@ -50,14 +51,6 @@
   display: none;
   cursor: pointer;
   padding: 5px;
-}
-
-.navToggleLine {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #f6f7eb;
-  margin-bottom: 4px;
 }
 
 .navList {
@@ -141,9 +134,10 @@
 
   .navList.open {
     z-index: 1;
-    margin: auto;
     display: flex;
-    position: absolute;
+    position: fixed;
+    left: 0;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(#00569c, #63adf2);
