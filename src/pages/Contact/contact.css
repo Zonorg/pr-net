@@ -1,13 +1,10 @@
 .contactDiv {
-  margin: 30px 0;
+  margin: 0;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.contactDiv h2 {
-  padding: 0 20px;
 }
 
 .contactForm {
@@ -55,7 +52,7 @@ textarea {
   background-color: #444444;
 }
 
-.text-center{
+.text-center {
   display: flex;
   justify-content: center;
 }
@@ -63,6 +60,7 @@ textarea {
 @media screen and (max-width: 480px) {
   .contactDiv {
     margin: 0;
+    padding: 0;
   }
 
   .contactForm {

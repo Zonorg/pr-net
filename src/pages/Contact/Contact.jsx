@@ -30,7 +30,6 @@ const Contact = () => {
 
   return (
     <div className="contactDiv">
-      <h2>Contactanos</h2>
       <form ref={form} onSubmit={sendEmail} className="contactForm">
         <h2>Dejanos tus datos y nosotros te contactaremos para resolver tus consultas</h2>
         <p>¡Te responderemos en brevedad!</p>
