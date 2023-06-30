@@ -30,8 +30,10 @@ const Contact = () => {
 
   return (
     <div className="contactDiv">
+      <h2>Contactanos</h2>
       <form ref={form} onSubmit={sendEmail} className="contactForm">
-        <h2>Contrata nuestros servicios o envíanos tu consulta</h2>
+        <h2>Dejanos tus datos y nosotros te contactaremos para resolver tus consultas</h2>
+        <p>¡Te responderemos en brevedad!</p>
         <label htmlFor="subject">Nombre:</label>
         <input type="text" id="name" name="user_name" required />
         <label>Empresa:</label>
@@ -49,13 +51,13 @@ const Contact = () => {
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>¡Mensaje enviado!</Modal.Title>
+          <Modal.Title className="text-center">¡Mensaje enviado!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>Su mensaje ha sido enviado correctamente.</p>
           <p>En breves nos comunicaremos con usted para resolver sus dudas.</p>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="text-center">
           <Button variant="secondary" onClick={handleCloseModal}>
             Cerrar
           </Button>
